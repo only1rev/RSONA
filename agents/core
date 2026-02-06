@@ -1,0 +1,25 @@
+package agents.core
+
+/**
+ * Represents a single human interaction with a song.
+ * This is the smallest unit of meaning in RSONA.
+ */
+data class AgentInteraction(
+    val songId: String,
+    val userId: String?,
+    val interactionType: InteractionType,
+    val durationSeconds: Int,
+    val timestamp: Long
+)
+
+/**
+ * Types of interactions RSONA recognizes.
+ * No interaction here creates value by itself.
+ */
+enum class InteractionType {
+    PLAY,
+    REPLAY,
+    SHARE,
+    SAVE,
+    DERIVATIVE_USE
+}
